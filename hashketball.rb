@@ -1,5 +1,9 @@
 # Write your code below game_hash
+<<<<<<< HEAD
 require 'pry'
+=======
+#require 'pry'
+>>>>>>> 206ddeabb11144326a7bc1402ac6cd2694e6c988
 
 def game_hash
   {
@@ -194,7 +198,10 @@ def player_numbers(teamname)
     team_numbers
 end
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 206ddeabb11144326a7bc1402ac6cd2694e6c988
 def player_stats(players_name)
   stats=nil
     game_hash.each do |location, team_data|
@@ -210,6 +217,7 @@ def player_stats(players_name)
 end
 
 def big_shoe_rebounds
+<<<<<<< HEAD
   shoe_array=[]
   rebound=nil
   game_hash.each do |location, team_data|
@@ -229,4 +237,29 @@ def big_shoe_rebounds
       end
   end
   rebound
+=======
+
+big_shoe_array=[]
+    game_hash.each do |location, team_data|
+      counter=0
+
+      while counter < team_data[:players].length do
+          player=nil
+          player=team_data[:players][counter][:player_name]
+
+          big_shoe_array<<shoe_size(player)
+binding.pry
+        end
+        big_shoe_array.sort
+
+      while counter < team_data[:players].length do
+          if big_shoe_array.last==team_data[:players][counter][:shoe]
+              rebounds = team_data[:players][counter][:rebounds]
+          end
+        end
+            counter = counter + 1
+
+    end
+    rebounds
+>>>>>>> 206ddeabb11144326a7bc1402ac6cd2694e6c988
 end
